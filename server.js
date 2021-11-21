@@ -8,12 +8,12 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));
 
-app.use(require('./models'));
+const { User } = require('./models');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/Mongoose', {
-    // useFindAndModify: false,
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mongoose', {
+
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
