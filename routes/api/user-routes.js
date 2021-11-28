@@ -13,10 +13,10 @@ router.get('/', (req, res) => {
 //GET a single user by its _id and populated thought and friend data
 router.get('/:id', ({ params }, res) => {
     User.findOne({ _id: params.id })
-        .populate({
-            path: 'Thought',
-            select: '-__v'
-        })
+        // .populate({
+        //     path: 'Thought',
+        //     select: '-__v'
+        // })
         .then(dbUserData => {
             //if no user found send err
             if (!dbUserData) {
